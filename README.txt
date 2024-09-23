@@ -39,5 +39,5 @@ gcloud artifacts repositories create $REPO_NAME --repository-format=docker --loc
 
 gcloud builds submit --region=$REGION --tag $REGION-docker.pkg.dev/$GCP_PROJECT/$REPO_NAME/$CONTAINER_NAME
 
-gcloud run deploy $CONTAINER_NAME --image $REGION-docker.pkg.dev/$GCP_PROJECT/$REPO_NAME/$CONTAINER_NAME --port 80
+gcloud run deploy $CONTAINER_NAME --region $REGION --allow-unauthenticated --image $REGION-docker.pkg.dev/$GCP_PROJECT/$REPO_NAME/$CONTAINER_NAME --port 80
 ```
